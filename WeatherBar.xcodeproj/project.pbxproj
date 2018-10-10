@@ -12,6 +12,11 @@
 		6086E678216CE51B00AAAC2D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6086E676216CE51B00AAAC2D /* MainMenu.xib */; };
 		6086E684216CE51B00AAAC2D /* WeatherBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E683216CE51B00AAAC2D /* WeatherBarTests.swift */; };
 		6086E68F216CE51B00AAAC2D /* WeatherBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E68E216CE51B00AAAC2D /* WeatherBarUITests.swift */; };
+		6086E69D216CF61C00AAAC2D /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E69C216CF61C00AAAC2D /* StatusMenuController.swift */; };
+		6086E69F216D437000AAAC2D /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E69E216D437000AAAC2D /* WeatherAPI.swift */; };
+		6086E6A4216E69C100AAAC2D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E6A3216E69C100AAAC2D /* WeatherView.swift */; };
+		6086E6A7216E721100AAAC2D /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086E6A5216E721100AAAC2D /* PreferencesWindow.swift */; };
+		6086E6A8216E721100AAAC2D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6086E6A6216E721100AAAC2D /* PreferencesWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,12 @@
 		6086E68A216CE51B00AAAC2D /* WeatherBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6086E68E216CE51B00AAAC2D /* WeatherBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBarUITests.swift; sourceTree = "<group>"; };
 		6086E690216CE51B00AAAC2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6086E69C216CF61C00AAAC2D /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		6086E69E216D437000AAAC2D /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		6086E6A1216E4D1A00AAAC2D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		6086E6A3216E69C100AAAC2D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		6086E6A5216E721100AAAC2D /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		6086E6A6216E721100AAAC2D /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +85,13 @@
 		6086E666216CE51A00AAAC2D = {
 			isa = PBXGroup;
 			children = (
+				6086E69E216D437000AAAC2D /* WeatherAPI.swift */,
+				6086E69C216CF61C00AAAC2D /* StatusMenuController.swift */,
 				6086E671216CE51A00AAAC2D /* WeatherBar */,
 				6086E682216CE51B00AAAC2D /* WeatherBarTests */,
 				6086E68D216CE51B00AAAC2D /* WeatherBarUITests */,
 				6086E670216CE51A00AAAC2D /* Products */,
+				6086E6A0216E4D1A00AAAC2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +111,9 @@
 				6086E672216CE51A00AAAC2D /* AppDelegate.swift */,
 				6086E674216CE51B00AAAC2D /* Assets.xcassets */,
 				6086E676216CE51B00AAAC2D /* MainMenu.xib */,
+				6086E6A5216E721100AAAC2D /* PreferencesWindow.swift */,
+				6086E6A6216E721100AAAC2D /* PreferencesWindow.xib */,
+				6086E6A3216E69C100AAAC2D /* WeatherView.swift */,
 				6086E679216CE51B00AAAC2D /* Info.plist */,
 				6086E67A216CE51B00AAAC2D /* WeatherBar.entitlements */,
 			);
@@ -119,6 +136,14 @@
 				6086E690216CE51B00AAAC2D /* Info.plist */,
 			);
 			path = WeatherBarUITests;
+			sourceTree = "<group>";
+		};
+		6086E6A0216E4D1A00AAAC2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6086E6A1216E4D1A00AAAC2D /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +214,14 @@
 				TargetAttributes = {
 					6086E66E216CE51A00AAAC2D = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					6086E67E216CE51B00AAAC2D = {
 						CreatedOnToolsVersion = 10.0;
@@ -226,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6086E675216CE51B00AAAC2D /* Assets.xcassets in Resources */,
+				6086E6A8216E721100AAAC2D /* PreferencesWindow.xib in Resources */,
 				6086E678216CE51B00AAAC2D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6086E69F216D437000AAAC2D /* WeatherAPI.swift in Sources */,
+				6086E6A7216E721100AAAC2D /* PreferencesWindow.swift in Sources */,
+				6086E69D216CF61C00AAAC2D /* StatusMenuController.swift in Sources */,
 				6086E673216CE51A00AAAC2D /* AppDelegate.swift in Sources */,
+				6086E6A4216E69C100AAAC2D /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +456,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeatherBar/WeatherBar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GWKJRP4KM9;
 				INFOPLIST_FILE = WeatherBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,6 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.Coplan.WeatherBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -436,8 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeatherBar/WeatherBar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GWKJRP4KM9;
 				INFOPLIST_FILE = WeatherBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,6 +488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.Coplan.WeatherBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
